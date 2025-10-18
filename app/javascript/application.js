@@ -861,6 +861,15 @@ onPageLoad(() => {
     window.scrollTo({ top: targetY, behavior: reducedMotion ? 'instant' : 'smooth' })
   });
 
+  on('click', '.showing-user-comment', (event) => {
+    const nodes = qSA('.showing-user-comment')
+    const foundIndex = Array.from(nodes).findIndex(node => node === event.target)
+    const targetIndex = (foundIndex + 1) % nodes.length;
+    const targetY = nodes[targetIndex].getBoundingClientRect().top + window.scrollY
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: targetY, behavior: reducedMotion ? 'instant' : 'smooth' })
+  });
+
   // Private messages
 
   // inject js-only UI

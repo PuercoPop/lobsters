@@ -557,6 +557,7 @@ supports it:  https://caniuse.com/?search=%3Ahas
 	background-color: var(--color-bg-target);
 	border-radius: 8px;
 	padding: 3px;
+        pointer: cusor;
 }
 
 li .link {
